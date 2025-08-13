@@ -5,7 +5,7 @@ class Process {
     boolean executed = false;
 }
 
-public class PRORITY {
+public class PRIORITY {
     public static void main(String[] args) {
         int n, cput = 0;
         Scanner sc = new Scanner(System.in);
