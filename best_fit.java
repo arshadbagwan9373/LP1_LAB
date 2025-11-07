@@ -36,7 +36,7 @@ public class best_fit {
             int blkn = -1;
 
             for (int j = 0; j < nb; j++) {
-                if (blocks[j].size >= processes[i].size && blocks[j].size < minblk) {
+                if (processes[i].size <= blocks[j].size && blocks[j].size < minblk) {
                     minblk = blocks[j].size;
                     blkn = j;
                 }
@@ -49,14 +49,11 @@ public class best_fit {
             }
         }
 
-        // Output Allocation Table
-        System.out.printf("%-10s %-20s %-10s\n", "PID", "Allocated Block", "Allocated");
+        System.out.printf("%-10s %-10s %-10s\n", "PID","Allocated bloack","Allocated");
         for (int i = 0; i < np; i++) {
-            System.out.printf("%-10d %-20s %-10s\n",
-                processes[i].pid,
-                processes[i].allocated ? processes[i].blkno : "-",
-                processes[i].allocated ? "true" : "false"
-            );
+
+            System.out.printf("%-10s %-10s %-10s\n",processes[i].pid ,processes[i].blkno,processes[i].allocated );
+            
         }
     }
 }
